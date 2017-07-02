@@ -1,0 +1,8 @@
+<mjolnir>
+    <exec cmd="mkdir tmp-%USERNAME%" cwd="."/>
+    <create_dir path="tmp"/>
+    <unzip file="software_package.zip" dst="tmp"/>
+    <exec cmd="my_installer.exe /S /D=C:\\GNATPRO\\7.4.2-win-x86" cwd="tmp\\gnat"/>
+    <set_env var="PATH" value=";C:\\my_app\\bin" append="yes"/>
+    <delete_dir path="tmp"/>
+</mjolnir>
